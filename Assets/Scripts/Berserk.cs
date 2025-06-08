@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Berserk : Enemy
 {
-    [SerializeField] private int AgressionGain = 5;
-
+    [SerializeField] private int agressionGain = 5;
+    
     public override int Attack()
     {
-        agression += AgressionGain;
-        return agression / 10;
+        agression += agressionGain;
+        int damage = agression / 10;
+        Debug.Log(EnemyName + " attacks with increased aggression! Damage: " + damage);
+        return damage;
     }
 }
